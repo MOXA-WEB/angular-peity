@@ -2,57 +2,57 @@ var angularPeity = angular.module( 'angular-peity', [] );
 
 
 var buildChartDirective = function ( chartType ) {
-	return {
-		restrict: 'E',
-		scope: {
-			data: "=",
-			options: "="
-		},
-		link: function ( scope, element, attrs ) {
+  return {
+    restrict: 'E',
+    scope: {
+      data: "=",
+      options: "="
+    },
+    link: function ( scope, element, attrs ) {
 
-            var options = {};
-            if ( scope.options ) {
-				options = scope.options;
-            }
+      var options = {};
+      if ( scope.options ) {
+        options = scope.options;
+      }
 
-			var span = document.createElement( 'span' );
-			span.textContent = scope.data.join();
+      var span = document.createElement( 'span' );
+      span.textContent = scope.data.join();
 
-            if ( !attrs.class ) {
-                span.className = "";
-            } else {
-                span.className = attrs.class;
-            }
+      if ( !attrs.class ) {
+        span.className = "";
+      } else {
+        span.className = attrs.class;
+      }
 
-            if (element[0].nodeType === 8) {
-                element.replaceWith( span );
-            } else {
-                element[0].appendChild( span );
-            }
+      if (element[0].nodeType === 8) {
+        element.replaceWith( span );
+      } else {
+        element[0].appendChild( span );
+      }
 
-            jQuery( span ).peity( chartType, options );
+      $( span ).peity( chartType, options );
 
-		}
-	};
+    }
+  };
 };
 
 
 angularPeity.directive( 'pieChart', function () {
 
-	return buildChartDirective( "pie" );
+  return buildChartDirective( "pie" );
 
 } );
 
 
 angularPeity.directive( 'barChart', function () {
 
-	return buildChartDirective( "bar" );
+  return buildChartDirective( "bar" );
 
 } );
 
 
 angularPeity.directive( 'lineChart', function () {
 
-	return buildChartDirective( "line" );
+  return buildChartDirective( "line" );
 
 } );
