@@ -1,0 +1,29 @@
+{
+  "name": "angular-peity",
+  "main": "angular-peity.js",
+  "version": "0.0.1",
+  "main": "./angular-peity.js",
+  "homepage": "https://github.com/projectweekend/angular-peity",
+  "authors": [
+    "Brian Hines <brian@projectweekend.net>"
+  ],
+  "description": "An AngularJS directive for using Peity charts",
+  "keywords": [
+    "peity",
+    "charts",
+    "svg",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "peity": "~3.2.0",
+    "jquery": "~2.1.4"
+  }
+}
